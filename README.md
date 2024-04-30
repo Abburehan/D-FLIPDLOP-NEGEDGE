@@ -26,19 +26,44 @@ Therefore, D flip-flop always Hold the information, which is available on data i
 
 Next state of D flip-flop is always equal to data input, D for every positive transition of the clock signal. Hence, D flip-flops can be used in registers, shift registers and some of the counters.
 
-**Procedure**
+## Procedure:
 
-/* write all the steps invloved */
+1.Define Module: Define a Verilog module for the D flip-flop with inputs (D, CLK) and outputs (Q, Q_bar).
 
-**PROGRAM**
+2.Declare Inputs and Outputs: Declare input and output ports for the module.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+3.Implement Flip-Flop Logic: Write Verilog code to implement the D flip-flop logic based on its functional table. Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
+
+4.Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the D flip-flop under different input conditions.
+
+5.Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (D, CLK) to cover all possible input states.
+
+6.Verify Output Behavior: Verify that the output behavior of the D flip-flop matches the expected behavior defined by its functional table.
+
+7.Check for Race Conditions: Ensure that there are no race conditions or undefined states in the design by analyzing the timing and sequence of input changes.
+## PROGRAM:
+```
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: SYED ABBU REHAN
+Register Number: 212223240165
+
+module DFlipflop(D,Clock,Q,Qbar);
+input D,Clock;
+output reg Q,Qbar;
+always @ (negedge Clock)// use negative edge clock for triggereing condition 
+//compute D flipflop logic here
+begin
+ 	Q=D;
+Qbar=~D;
+end
+ endmodule
 */
+```
+## RTL LOGIC FOR FLIPFLOPS:
+![image](https://github.com/Abburehan/D-FLIPDLOP-NEGEDGE/assets/138849336/d7c43f91-4fd5-4e1e-a0da-65025a7a176a)
 
-**RTL LOGIC FOR FLIPFLOPS**
+## TIMING DIGRAMS FOR FLIP FLOPS:
+![image](https://github.com/Abburehan/D-FLIPDLOP-NEGEDGE/assets/138849336/51ce3b35-d95b-48ae-bd1c-bbf7add43c62)
 
-
-**TIMING DIGRAMS FOR FLIP FLOPS**
-
-
-**RESULTS**
+## RESULTS:
+ Thus the program to implement a D flipflop using verilog and validating their functionality using their functional tables.
